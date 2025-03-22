@@ -20,7 +20,7 @@ h1 {
 
 /* Element blocks */
 .element {
-  color: black !important;
+  color: black;
 }
 .element {
   padding: 5px 10px;
