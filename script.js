@@ -30,7 +30,7 @@ window.onload = function () {
   const upperchars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
   const norchars = ['a', 'B', 'C', 'D', 'e', 'F', 'g', 'H', 'I', 'J', 'K',
     'l', 'm', 'N', 'O', 'P', 'q', 'R', 'S', 't', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  const fullcharnames = ["Alpha Particle", "Boson", "Carbon", "Deuterium", "Electron", "Fluorine", "Gluon", "Hydrogen",
+  const fullcharnames = ["Alpha Particle", "Boron", "Carbon", "Deuterium", "Electron", "Fluorine", "Gluon", "Hydrogen",
     "Iodine", "Joule", "Potassium", "Lepton", "Mass", "Nitrogen", "Oxygen", "Phosphorus", "Quark", "Roentgen", "Sulfur",
     "Tau", "Uranium", "Vanadium", "Tungsten", "X boson", "Yttrium", "Z boson"];
 
