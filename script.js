@@ -2,9 +2,6 @@ window.onload = function () {
   const input = document.getElementById("input");
   const output = document.getElementById("output");
   const copyBtn = document.getElementById("copyBtn");
-  const infoBox = document.getElementById("element-info");
-  const infoContent = document.getElementById("info-content");
-  const closeInfo = document.getElementById("close-info");
 
   const norelems = ["He", "Li", "Be", "Ne", "Na", "Mg", "Al", "Si", "Cl", "Ar", "Ca",
     "Sc", "Ti", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br",
@@ -36,27 +33,41 @@ window.onload = function () {
     "Iodine", "Joule", "Potassium", "Lepton", "Mass", "Nitrogen", "Oxygen", "Phosphorus", "Quark", "Roentgen", "Sulfur",
     "Tau", "Uranium", "Vanadium", "Tungsten", "X boson", "Yttrium", "Z boson"];
 
-  const elementDescriptions = {
-    "Hydrogen": "The lightest and most abundant element in the universe.",
-    "Helium": "A noble gas used in balloons and cryogenics.",
-    "Lithium": "A soft metal used in batteries.",
-    "Carbon": "The basis of all known life.",
-    "Nitrogen": "78% of the Earth's atmosphere.",
-    "Oxygen": "Vital for respiration and combustion.",
-    "Electron": "A negatively charged lepton orbiting the nucleus.",
-    "Quark": "A fundamental particle inside protons and neutrons.",
-    "Gluon": "The force carrier that binds quarks together.",
-    "Lepton": "A class of fundamental particles including electrons.",
-    "Tau": "A heavy cousin of the electron.",
-    "Alpha Particle": "A helium nucleus emitted in radioactive decay.",
-    "Beta particle": "An electron or positron emitted from radioactive decay.",
-    "Deuterium": "An isotope of hydrogen with one proton and one neutron.",
-    "Mass": "The measure of matter in an object.",
-    "Joule": "A unit of energy in the metric system.",
-    "Roentgen": "A legacy unit of radiation exposure.",
-    "X boson": "A hypothetical boson not yet observed.",
-    "Z boson": "Mediates the weak nuclear force with the W boson."
-  };
+  function getColorClass(name) {
+    const nobleGases = ["Helium", "Neon", "Argon", "Krypton", "Xenon", "Radon", "Oganesson"];
+    const halogens = ["Fluorine", "Chlorine", "Bromine", "Iodine", "Astatine", "Tennessine"];
+    const metalloids = ["Boron", "Silicon", "Arsenic", "Tellurium", "Germanium", "Antimony", "Polonium"];
+    const lanthanides = ["Lanthanum", "Cerium", "Praseodymium", "Neodymium", "Promethium", "Samarium", "Europium", "Gadolinium",
+      "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium", "Lutetium"];
+    const actinides = ["Actinium", "Thorium", "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium",
+      "Berkelium", "Californium", "Einsteinium", "Fermium", "Mendelevium", "Nobelium", "Lawrencium"];
+    const nonmetals = ["Hydrogen", "Oxygen", "Carbon", "Nitrogen", "Sulfur", "Phosphorus"];
+
+    const quantum = ["Quark", "Gluon"];
+    const lepton = ["Electron", "Lepton", "Tau"];
+    const energy = ["Joule"];
+    const masslike = ["Mass", "Deuterium"];
+    const radiation = ["Roentgen"];
+    const boson = ["X boson", "Z boson"];
+    const exotic = ["Alpha Particle", "Beta particle"];
+
+    if (nobleGases.includes(name)) return 'noble-gas';
+    if (halogens.includes(name)) return 'halogen';
+    if (metalloids.includes(name)) return 'metalloid';
+    if (lanthanides.includes(name)) return 'lanthanide';
+    if (actinides.includes(name)) return 'actinide';
+    if (nonmetals.includes(name)) return 'nonmetal';
+
+    if (quantum.includes(name)) return 'quantum';
+    if (lepton.includes(name)) return 'lepton';
+    if (energy.includes(name)) return 'energy';
+    if (masslike.includes(name)) return 'masslike';
+    if (radiation.includes(name)) return 'radiation';
+    if (boson.includes(name)) return 'boson';
+    if (exotic.includes(name)) return 'exotic';
+
+    return 'metal'; // default fallback
+  }
 
   function convert() {
     const value = input.value.toUpperCase();
@@ -69,11 +80,9 @@ window.onload = function () {
       for (let j = 0; j < upperelems.length; j++) {
         if (two === upperelems[j]) {
           const span = document.createElement("span");
-          const label = fullElementNames[j];
-          span.className = `element ${getColorClass(label)}`;
+          span.className = `element ${getColorClass(fullElementNames[j])}`;
           span.innerText = norelems[j];
-          span.setAttribute('data-tooltip', label);
-          span.addEventListener("click", () => showInfo(label));
+          span.setAttribute('data-tooltip', fullElementNames[j]);
           output.appendChild(span);
           i += 2;
           matched = true;
@@ -92,24 +101,14 @@ window.onload = function () {
           span.innerText = norchars[j];
           span.setAttribute('data-tooltip', label);
           if (norchars[j] === 'e') span.innerText += '-';
-          span.addEventListener("click", () => showInfo(label));
           output.appendChild(span);
           break;
         }
       }
+
       i++;
     }
   }
-
-  function showInfo(label) {
-    const desc = elementDescriptions[label] || "No additional information available.";
-    infoContent.innerHTML = `<h3>${label}</h3><p>${desc}</p>`;
-    infoBox.style.display = "block";
-  }
-
-  closeInfo.addEventListener("click", () => {
-    infoBox.style.display = "none";
-  });
 
   input.addEventListener("input", convert);
 
