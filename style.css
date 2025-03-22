@@ -1,0 +1,14 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background: #f0f8ff;
+}
+
+h1 {
+  color: #005ea5;
+}
+
+#output {
+  margin-top: 15px;
+  font-weight: bold;
+}
