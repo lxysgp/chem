@@ -2,6 +2,7 @@ window.onload = function () {
   const input = document.getElementById("input");
   const output = document.getElementById("output");
   const copyBtn = document.getElementById("copyBtn");
+  const toggleBtn = document.getElementById("toggle-theme");
 
   const norelems = ["He", "Li", "Be", "Ne", "Na", "Mg", "Al", "Si", "Cl", "Ar", "Ca",
     "Sc", "Ti", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br",
@@ -119,5 +120,9 @@ window.onload = function () {
     }).catch(() => {
       alert("Failed to copy.");
     });
+  });
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    toggleBtn.innerText = document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
   });
 };
