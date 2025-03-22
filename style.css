@@ -1,7 +1,9 @@
+/* Base styles */
 body {
   font-family: sans-serif;
   padding: 20px;
   background: #f0f8ff;
+  color: #000; /* Ensure text is visible in light mode */
 }
 
 h1 {
@@ -16,6 +18,7 @@ h1 {
   gap: 5px;
 }
 
+/* Element blocks */
 .element {
   padding: 5px 10px;
   border-radius: 6px;
@@ -24,6 +27,7 @@ h1 {
   cursor: pointer;
 }
 
+/* Tooltip on hover */
 .element::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -45,24 +49,25 @@ h1 {
 }
 
 /* Category colors */
-.metal { background: #ffd700; }
-.noble-gas { background: #00ced1; }
-.nonmetal { background: #90ee90; }
-.halogen { background: #ff9999; }
-.metalloid { background: #dda0dd; }
-.lanthanide { background: #ffa500; }
-.actinide { background: #f4a460; }
-.lepton { background: #5ddcff; }
-.quantum { background: #c084fc; }
-.energy { background: #ffdd57; }
-.masslike { background: #b0b0b0; }
-.radiation { background: #ff6b6b; }
+.metal       { background: #ffd700; }
+.noble-gas   { background: #00ced1; }
+.nonmetal    { background: #90ee90; }
+.halogen     { background: #ff9999; }
+.metalloid   { background: #dda0dd; }
+.lanthanide  { background: #ffa500; }
+.actinide    { background: #f4a460; }
+.lepton      { background: #5ddcff; }
+.quantum     { background: #c084fc; }
+.energy      { background: #ffdd57; }
+.masslike    { background: #b0b0b0; }
+.radiation   { background: #ff6b6b; }
 .boson {
   background: #444;
   color: white;
 }
-.exotic { background: #ff4fc1; }
+.exotic      { background: #ff4fc1; }
 
+/* Dark mode support */
 body.dark {
   background: #121212;
   color: #e0e0e0;
