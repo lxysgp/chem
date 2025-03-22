@@ -122,19 +122,7 @@ window.onload = function () {
     });
   });
 
-  shareBtn.addEventListener("click", () => {
-    const word = input.value.trim();
-    if (word === "") {
-      alert("Type something first!");
-      return;
-    }
-    const url = `${window.location.origin}${window.location.pathname}?word=${encodeURIComponent(word)}`;
-    navigator.clipboard.writeText(url).then(() => {
-      alert("Shareable link copied!");
-    }).catch(() => {
-      alert("Failed to copy shareable link.");
-    });
-  });
+  
 
   // Load from URL if present
   const params = new URLSearchParams(window.location.search);
