@@ -2,7 +2,6 @@ window.onload = function () {
   const input = document.getElementById("input");
   const output = document.getElementById("output");
   const copyBtn = document.getElementById("copyBtn");
-  const shareBtn = document.getElementById("shareBtn");
 
   const norelems = ["He", "Li", "Be", "Ne", "Na", "Mg", "Al", "Si", "Cl", "Ar", "Ca",
     "Sc", "Ti", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br",
@@ -121,15 +120,4 @@ window.onload = function () {
       alert("Failed to copy.");
     });
   });
-
-  
-
-  // Load from URL if present
-  const params = new URLSearchParams(window.location.search);
-  if (params.has("word")) {
-    const word = params.get("word");
-    input.value = word;
-    convert();
-    document.title = `Chemspeller – "${word}"`;
-  }
 };
