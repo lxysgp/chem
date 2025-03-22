@@ -2,6 +2,7 @@ window.onload = function () {
   const input = document.getElementById("input");
   const output = document.getElementById("output");
   const copyBtn = document.getElementById("copyBtn");
+  const shareBtn = document.getElementById("shareBtn");
 
   const norelems = ["He", "Li", "Be", "Ne", "Na", "Mg", "Al", "Si", "Cl", "Ar", "Ca",
     "Sc", "Ti", "Cr", "Mn", "Fe", "Co", "Ni", "Cu", "Zn", "Ga", "Ge", "As", "Se", "Br",
@@ -27,45 +28,47 @@ window.onload = function () {
 
   const upperelems = norelems.map(e => e.toUpperCase());
   const upperchars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
-  const norchars = ['a', 'b', 'C', 'D', 'e', 'F', 'g', 'H', 'I', 'J', 'K', 'l', 'm', 'N', 'O', 'P', 'q', 'R', 'S', 't', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  const norchars = ['a', 'b', 'C', 'D', 'e', 'F', 'g', 'H', 'I', 'J', 'K',
+    'l', 'm', 'N', 'O', 'P', 'q', 'R', 'S', 't', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   const fullcharnames = ["Alpha Particle", "Beta particle", "Carbon", "Deuterium", "Electron", "Fluorine", "Gluon", "Hydrogen",
     "Iodine", "Joule", "Potassium", "Lepton", "Mass", "Nitrogen", "Oxygen", "Phosphorus", "Quark", "Roentgen", "Sulfur",
     "Tau", "Uranium", "Vanadium", "Tungsten", "X boson", "Yttrium", "Z boson"];
 
   function getColorClass(name) {
-  const nobleGases = ["Helium", "Neon", "Argon", "Krypton", "Xenon", "Radon", "Oganesson"];
-  const particles = ["Electron", "Gluon", "Lepton", "Quark", "Alpha Particle", "Beta particle", "Tau", "X boson", "Z boson"];
-  const nonmetals = ["Hydrogen", "Oxygen", "Carbon", "Nitrogen", "Sulfur", "Phosphorus"];
-  const halogens = ["Fluorine", "Chlorine", "Bromine", "Iodine", "Astatine", "Tennessine"];
-  const metalloids = ["Boron", "Silicon", "Arsenic", "Tellurium", "Germanium", "Antimony", "Polonium"];
-  const lanthanides = ["Lanthanum", "Cerium", "Praseodymium", "Neodymium", "Promethium", "Samarium", "Europium", "Gadolinium",
-                       "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium", "Lutetium"];
-  const actinides = ["Actinium", "Thorium", "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium",
-                     "Berkelium", "Californium", "Einsteinium", "Fermium", "Mendelevium", "Nobelium", "Lawrencium"];
-const quantum = ["Quark", "Gluon"];
-const lepton = ["Electron", "Lepton", "Tau"];
-const energy = ["Joule"];
-const masslike = ["Mass", "Deuterium"];
-const radiation = ["Roentgen"];
-const boson = ["X boson", "Z boson"];
-const exotic = ["Alpha Particle", "Beta particle"];
-  if (nobleGases.includes(name)) return 'noble-gas';
-  if (particles.includes(name)) return 'particle';
-  if (halogens.includes(name)) return 'halogen';
-  if (metalloids.includes(name)) return 'metalloid';
-  if (lanthanides.includes(name)) return 'lanthanide';
-  if (actinides.includes(name)) return 'actinide';
-  if (nonmetals.includes(name)) return 'nonmetal';
-if (quantum.includes(name)) return 'quantum';
-if (lepton.includes(name)) return 'lepton';
-if (energy.includes(name)) return 'energy';
-if (masslike.includes(name)) return 'masslike';
-if (radiation.includes(name)) return 'radiation';
-if (boson.includes(name)) return 'boson';
-if (exotic.includes(name)) return 'exotic';
+    const nobleGases = ["Helium", "Neon", "Argon", "Krypton", "Xenon", "Radon", "Oganesson"];
+    const halogens = ["Fluorine", "Chlorine", "Bromine", "Iodine", "Astatine", "Tennessine"];
+    const metalloids = ["Boron", "Silicon", "Arsenic", "Tellurium", "Germanium", "Antimony", "Polonium"];
+    const lanthanides = ["Lanthanum", "Cerium", "Praseodymium", "Neodymium", "Promethium", "Samarium", "Europium", "Gadolinium",
+      "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium", "Lutetium"];
+    const actinides = ["Actinium", "Thorium", "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium",
+      "Berkelium", "Californium", "Einsteinium", "Fermium", "Mendelevium", "Nobelium", "Lawrencium"];
+    const nonmetals = ["Hydrogen", "Oxygen", "Carbon", "Nitrogen", "Sulfur", "Phosphorus"];
 
-  return 'metal'; // default
-}
+    const quantum = ["Quark", "Gluon"];
+    const lepton = ["Electron", "Lepton", "Tau"];
+    const energy = ["Joule"];
+    const masslike = ["Mass", "Deuterium"];
+    const radiation = ["Roentgen"];
+    const boson = ["X boson", "Z boson"];
+    const exotic = ["Alpha Particle", "Beta particle"];
+
+    if (nobleGases.includes(name)) return 'noble-gas';
+    if (halogens.includes(name)) return 'halogen';
+    if (metalloids.includes(name)) return 'metalloid';
+    if (lanthanides.includes(name)) return 'lanthanide';
+    if (actinides.includes(name)) return 'actinide';
+    if (nonmetals.includes(name)) return 'nonmetal';
+
+    if (quantum.includes(name)) return 'quantum';
+    if (lepton.includes(name)) return 'lepton';
+    if (energy.includes(name)) return 'energy';
+    if (masslike.includes(name)) return 'masslike';
+    if (radiation.includes(name)) return 'radiation';
+    if (boson.includes(name)) return 'boson';
+    if (exotic.includes(name)) return 'exotic';
+
+    return 'metal'; // default fallback
+  }
 
   function convert() {
     const value = input.value.toUpperCase();
@@ -118,4 +121,27 @@ if (exotic.includes(name)) return 'exotic';
       alert("Failed to copy.");
     });
   });
+
+  shareBtn.addEventListener("click", () => {
+    const word = input.value.trim();
+    if (word === "") {
+      alert("Type something first!");
+      return;
+    }
+    const url = `${window.location.origin}${window.location.pathname}?word=${encodeURIComponent(word)}`;
+    navigator.clipboard.writeText(url).then(() => {
+      alert("Shareable link copied!");
+    }).catch(() => {
+      alert("Failed to copy shareable link.");
+    });
+  });
+
+  // Load from URL if present
+  const params = new URLSearchParams(window.location.search);
+  if (params.has("word")) {
+    const word = params.get("word");
+    input.value = word;
+    convert();
+    document.title = `Chemspeller – "${word}"`;
+  }
 };
