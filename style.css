@@ -49,3 +49,17 @@ h1 {
 .noble-gas { background: #00ced1; }   /* cyan-ish */
 .nonmetal { background: #90ee90; }    /* green */
 .particle { background: #ff69b4; }    /* pink */
+.metalloid { background: #dda0dd; }  /* purple */
+.halogen { background: #ff9999; }    /* red-pink */
+.lanthanide { background: #ffa500; } /* orange */
+.actinide { background: #f4a460; }   /* brown */
+.quantum { background: #c084fc; }   /* Quarks, Gluon */
+.lepton { background: #5ddcff; }    /* Electron, Tau, etc. */
+.energy { background: #ffdd57; }    /* Joules */
+.masslike { background: #b0b0b0; }  /* Mass, Deuterium */
+.radiation { background: #ff6b6b; } /* Roentgen */
+.boson {
+  background: #444;
+  color: white;
+}
+.exotic { background: #ff4fc1; }    /* Alpha, Beta */
