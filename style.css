@@ -63,28 +63,3 @@ h1 {
 }
 .exotic { background: #ff4fc1; }
 
-/* Info panel */
-#element-info {
-  margin-top: 20px;
-  padding: 12px;
-  border-left: 4px solid #888;
-  background: #f4f4f4;
-  border-radius: 8px;
-  display: none;
-  position: relative;
-}
-
-#element-info h3 {
-  margin: 0 0 5px;
-  color: #333;
-}
-
-#close-info {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  border: none;
-  background: none;
-  font-size: 18px;
-  cursor: pointer;
-}
