@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chemspeller</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Chemspeller 🧪</h1>
@@ -12,10 +12,14 @@
   <input type="text" id="input" placeholder="Type something..." />
   <br><br>
   <button id="copyBtn">📋 Copy</button>
-  
 
   <h2>Result</h2>
   <div id="output"></div>
+
+  <div id="element-info" class="hidden">
+    <button id="close-info">❌</button>
+    <div id="info-content"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
