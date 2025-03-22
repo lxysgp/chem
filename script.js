@@ -33,11 +33,39 @@ window.onload = function () {
     "Tau", "Uranium", "Vanadium", "Tungsten", "X boson", "Yttrium", "Z boson"];
 
   function getColorClass(name) {
-    if (["Helium", "Neon", "Argon", "Krypton", "Xenon", "Radon"].includes(name)) return 'noble-gas';
-    if (["Electron", "Gluon", "Lepton", "Quark", "Alpha Particle", "Beta particle", "Tau", "X boson", "Z boson"].includes(name)) return 'particle';
-    if (["Hydrogen", "Oxygen", "Carbon", "Nitrogen", "Sulfur", "Phosphorus"].includes(name)) return 'nonmetal';
-    return 'metal';
-  }
+  const nobleGases = ["Helium", "Neon", "Argon", "Krypton", "Xenon", "Radon", "Oganesson"];
+  const particles = ["Electron", "Gluon", "Lepton", "Quark", "Alpha Particle", "Beta particle", "Tau", "X boson", "Z boson"];
+  const nonmetals = ["Hydrogen", "Oxygen", "Carbon", "Nitrogen", "Sulfur", "Phosphorus"];
+  const halogens = ["Fluorine", "Chlorine", "Bromine", "Iodine", "Astatine", "Tennessine"];
+  const metalloids = ["Boron", "Silicon", "Arsenic", "Tellurium", "Germanium", "Antimony", "Polonium"];
+  const lanthanides = ["Lanthanum", "Cerium", "Praseodymium", "Neodymium", "Promethium", "Samarium", "Europium", "Gadolinium",
+                       "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium", "Lutetium"];
+  const actinides = ["Actinium", "Thorium", "Protactinium", "Uranium", "Neptunium", "Plutonium", "Americium", "Curium",
+                     "Berkelium", "Californium", "Einsteinium", "Fermium", "Mendelevium", "Nobelium", "Lawrencium"];
+const quantum = ["Quark", "Gluon"];
+const lepton = ["Electron", "Lepton", "Tau"];
+const energy = ["Joule"];
+const masslike = ["Mass", "Deuterium"];
+const radiation = ["Roentgen"];
+const boson = ["X boson", "Z boson"];
+const exotic = ["Alpha Particle", "Beta particle"];
+  if (nobleGases.includes(name)) return 'noble-gas';
+  if (particles.includes(name)) return 'particle';
+  if (halogens.includes(name)) return 'halogen';
+  if (metalloids.includes(name)) return 'metalloid';
+  if (lanthanides.includes(name)) return 'lanthanide';
+  if (actinides.includes(name)) return 'actinide';
+  if (nonmetals.includes(name)) return 'nonmetal';
+if (quantum.includes(name)) return 'quantum';
+if (lepton.includes(name)) return 'lepton';
+if (energy.includes(name)) return 'energy';
+if (masslike.includes(name)) return 'masslike';
+if (radiation.includes(name)) return 'radiation';
+if (boson.includes(name)) return 'boson';
+if (exotic.includes(name)) return 'exotic';
+
+  return 'metal'; // default
+}
 
   function convert() {
     const value = input.value.toUpperCase();
