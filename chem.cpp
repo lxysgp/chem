@@ -62,10 +62,10 @@ string upperelems[104] = { /* after 104, switch to one letter mode */
 char upperchars[26] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
                       'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S','T','U', 'V',
                       'W', 'X', 'Y', 'Z' };
-char norchars[26] = { 'a', 'b', 'C', 'D', 'e', 'F', 'g', 'H', 'I', 'J', 'K',
+char norchars[26] = { 'a', 'B', 'C', 'D', 'e', 'F', 'g', 'H', 'I', 'J', 'K',
                       'l', 'm', 'N', 'O', 'P', 'q', 'R', 'S', 't', 'U', 'V',
                       'W', 'X', 'Y', 'Z' };
-string fullcharnames[26] = {"Alpha Particle", "Beta particle", "Carbon", "Deuterium", "electron", "Fluorine", "Gluon", "Hydrogen"
+string fullcharnames[26] = {"Alpha Particle", "Boron", "Carbon", "Deuterium", "electron", "Fluorine", "Gluon", "Hydrogen"
 , "Iodine", "Joule", "Potassium", "Lepton", "Mass", "Nitrogen", "Oxygen", "Phosphorus", "Quark", "Roentgen", "Sulfer",
 "Tau", "Uranium", "Vanadium", "Tungsten", "X boson", "Yttrium", "Z boson"};
 void findelem(string msg) { // msg: "Auti"
