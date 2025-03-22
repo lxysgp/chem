@@ -11,4 +11,41 @@ h1 {
 #output {
   margin-top: 15px;
   font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
+
+.element {
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 1.2em;
+  position: relative;
+  cursor: pointer;
+}
+
+.element::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  display: none;
+  z-index: 10;
+}
+
+.element:hover::after {
+  display: block;
+}
+
+/* Color classes */
+.metal { background: #ffd700; }       /* gold-like */
+.noble-gas { background: #00ced1; }   /* cyan-ish */
+.nonmetal { background: #90ee90; }    /* green */
+.particle { background: #ff69b4; }    /* pink */
