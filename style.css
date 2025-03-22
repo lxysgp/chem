@@ -73,7 +73,7 @@ h1 {
 /* Dark mode support */
 body.dark {
   background: #121212;
-  color: #000000;
+  color: ##c4c4c4;
 }
 
 body.dark input,
