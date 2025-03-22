@@ -44,22 +44,47 @@ h1 {
   display: block;
 }
 
-/* Color classes */
-.metal { background: #ffd700; }       /* gold-like */
-.noble-gas { background: #00ced1; }   /* cyan-ish */
-.nonmetal { background: #90ee90; }    /* green */
-.particle { background: #ff69b4; }    /* pink */
-.metalloid { background: #dda0dd; }  /* purple */
-.halogen { background: #ff9999; }    /* red-pink */
-.lanthanide { background: #ffa500; } /* orange */
-.actinide { background: #f4a460; }   /* brown */
-.quantum { background: #c084fc; }   /* Quarks, Gluon */
-.lepton { background: #5ddcff; }    /* Electron, Tau, etc. */
-.energy { background: #ffdd57; }    /* Joules */
-.masslike { background: #b0b0b0; }  /* Mass, Deuterium */
-.radiation { background: #ff6b6b; } /* Roentgen */
+/* Category colors */
+.metal { background: #ffd700; }
+.noble-gas { background: #00ced1; }
+.nonmetal { background: #90ee90; }
+.halogen { background: #ff9999; }
+.metalloid { background: #dda0dd; }
+.lanthanide { background: #ffa500; }
+.actinide { background: #f4a460; }
+.lepton { background: #5ddcff; }
+.quantum { background: #c084fc; }
+.energy { background: #ffdd57; }
+.masslike { background: #b0b0b0; }
+.radiation { background: #ff6b6b; }
 .boson {
   background: #444;
   color: white;
 }
-.exotic { background: #ff4fc1; }    /* Alpha, Beta */
+.exotic { background: #ff4fc1; }
+
+/* Info panel */
+#element-info {
+  margin-top: 20px;
+  padding: 12px;
+  border-left: 4px solid #888;
+  background: #f4f4f4;
+  border-radius: 8px;
+  display: none;
+  position: relative;
+}
+
+#element-info h3 {
+  margin: 0 0 5px;
+  color: #333;
+}
+
+#close-info {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+}
