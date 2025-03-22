@@ -20,6 +20,9 @@ h1 {
 
 /* Element blocks */
 .element {
+  color: black !important;
+}
+.element {
   padding: 5px 10px;
   border-radius: 6px;
   font-size: 1.2em;
